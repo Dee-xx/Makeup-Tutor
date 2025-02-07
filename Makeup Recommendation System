@@ -1,0 +1,53 @@
+# Makeup Recommendation System
+
+def get_foundation(skin_type, skin_tone):
+    foundations = {
+        "dry": {"fair": "Hydrating Liquid Foundation - Fair Beige",
+                "medium": "Moisturizing Cream Foundation - Medium Sand",
+                "dark": "Dewy Finish Foundation - Deep Cocoa"},
+        
+        "oily": {"fair": "Oil-Free Matte Foundation - Porcelain",
+                 "medium": "Long-Wear Matte Foundation - Warm Honey",
+                 "dark": "Full-Coverage Matte Foundation - Mocha"},
+        
+        "combination": {"fair": "Semi-Matte Lightweight Foundation - Ivory",
+                        "medium": "Balance Control Foundation - Golden Tan",
+                        "dark": "Medium-Coverage Natural Finish - Espresso"}
+    }
+    return foundations.get(skin_type, {}).get(skin_tone, "No matching foundation found.")
+
+def get_lipstick(preference):
+    lipsticks = {
+        "matte": "Velvet Matte Lipstick - Classic Red",
+        "glossy": "High-Shine Gloss - Peach Glow",
+        "nude": "Natural Nude Lipstick - Soft Brown"
+    }
+    return lipsticks.get(preference, "No matching lipstick found.")
+
+def get_eyeshadow(skin_tone):
+    eyeshadows = {
+        "fair": "Cool-Toned Nude Palette",
+        "medium": "Warm Bronze Eyeshadow Palette",
+        "dark": "Deep Berry & Gold Shimmer Palette"
+    }
+    return eyeshadows.get(skin_tone, "No matching eyeshadow found.")
+
+# User Input
+print("Welcome to the Makeup Recommendation System!\n")
+
+skin_type = input("Enter your skin type (dry/oily/combination): ").strip().lower()
+skin_tone = input("Enter your skin tone (fair/medium/dark): ").strip().lower()
+lipstick_preference = input("Do you prefer matte, glossy, or nude lipstick? ").strip().lower()
+
+# Get Recommendations
+foundation = get_foundation(skin_type, skin_tone)
+lipstick = get_lipstick(lipstick_preference)
+eyeshadow = get_eyeshadow(skin_tone)
+
+# Display Recommendations
+print("\n💄 Your Personalized Makeup Recommendations 💄")
+print(f"✨ Foundation: {foundation}")
+print(f"💋 Lipstick: {lipstick}")
+print(f"👁 Eyeshadow: {eyeshadow}")
+
+print("\nThank you for using the Makeup Recommendation System!")
